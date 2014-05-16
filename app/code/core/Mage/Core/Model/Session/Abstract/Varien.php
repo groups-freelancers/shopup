@@ -83,6 +83,8 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
         }
 
         // session cookie params
+  		// commented to allow admin login chrome browser      
+        /*
         $cookieParams = array(
             'lifetime' => $cookie->getLifetime(),
             'path'     => $cookie->getPath(),
@@ -90,7 +92,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
             'secure'   => $cookie->isSecure(),
             'httponly' => $cookie->getHttponly()
         );
-
+*/
         if (!$cookieParams['httponly']) {
             unset($cookieParams['httponly']);
             if (!$cookieParams['secure']) {
