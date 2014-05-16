@@ -139,7 +139,7 @@
                     <div class="footer-primary-bottom-inner clearer">
                     
 						<?php if ($tmp = $this->getChildHtml('block_footer_primary_bottom_left')): ?>
-                        	<div class="item float-left clearer block_footer_primary_bottom_left"><?php echo $tmp; ?></div>
+                        	<div class="item float-left clearer block_footer_primary_bottom_left" style="margin-right:30px;"><?php echo $tmp; ?></div>
                         <?php endif; ?>
                         
                         <?php if ($tmp = $this->getChildHtml('block_footer_primary_bottom_right')): ?>
@@ -147,7 +147,8 @@
                         <?php endif; ?>
                         
                         <?php if ($theme->getCfg('magento_blocks/footer_newsletter')): ?>
-                            <div class="item float-right clearer">
+                            <div class="item float-left clearer">
+                                <h4>Sign UP For Our Newsletter:</h4>
                                 <?php echo $this->getChildHtml('newsletter'); ?>
                             </div>
                         <?php endif; ?>
@@ -176,14 +177,14 @@
             <div class="grid-full">
 
                 <div class="section clearer">
-                
-                	<div class="item float-left">
+
+                    <?php if ($tmp = $this->getChildHtml('block_footer_payment')): ?>
+                    	<div class="item block_footer_payment"><?php echo $tmp; ?></div>
+                    <?php endif; ?>
+
+                	<div class="item text-center" style="margin-top:20px;">
                     	<p class="footer-copyright"><?php echo $this->getCopyright(); ?></p>
                     </div>
-                    
-                    <?php if ($tmp = $this->getChildHtml('block_footer_payment')): ?>
-                    	<div class="item float-right block_footer_payment"><?php echo $tmp; ?></div>
-                    <?php endif; ?>
                     
                     <?php if ($tmp = $this->getChildHtml('store_switcher')): ?>
                     	<div class="item float-right"><?php echo $tmp; ?></div>

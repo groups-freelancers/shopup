@@ -59,15 +59,21 @@
             <?php if ($tmp = $this->getChildHtml('block_header_top_right')): ?>
             	<div class="block_header_top_right item item-right"><?php echo $tmp; ?></div>
             <?php endif; ?>
+            <div class="block_header_top_right item item-right">
+            <?php 
+            //Default Magento top links (page.xml)
+					if ($theme->getCfg('magento_blocks/top_links'))
+						echo $this->getChildHtml('topLinks');
+			?>
         </div>
         <?php echo $this->getChildHtml('topContainer'); ?>
         
 		<div class="header-main v v3">
         	<div class="logo-wrapper v-item">
 			<?php if ($this->getIsHomePage()):?>
-                <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+                <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" height="60" /></a></h1>
             <?php else:?>
-                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" height="60" /></a>
             <?php endif?>
             </div>
             
@@ -90,14 +96,21 @@
 						echo $tmp;
 						
 					//Default Magento top links (page.xml)
+					/*
 					if ($theme->getCfg('magento_blocks/top_links'))
 						echo $this->getChildHtml('topLinks');
+					*/
 					
 					//Custom top links - override default Magento top links
                     if ($tmp = $this->getChildHtml('block_header_top_links'))
 						echo $tmp;
 					?>
                 </div> <!-- end: top-links -->
+                <div style="float: right;">
+			<img src="<?php echo $this->getSkinUrl('images/free-delivery.png') ?>" style="margin-top: -9px;">
+			<span style="color: #EABC48;"> One Day Dispatch</span>
+  		</div>
+
 
             </div> <!-- end: user-menu -->
         </div> <!-- end: v -->
