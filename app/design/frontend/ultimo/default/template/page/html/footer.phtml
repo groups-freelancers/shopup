@@ -137,7 +137,7 @@
                 
                 <div class="footer-primary-bottom section section-space">
                     <div class="footer-primary-bottom-inner clearer">
-                    
+						<?php echo $this->getChildHtml('productbook.footer'); ?>                    
 						<?php if ($tmp = $this->getChildHtml('block_footer_primary_bottom_left')): ?>
                         	<div class="item float-left clearer block_footer_primary_bottom_left" style="margin-right:30px;"><?php echo $tmp; ?></div>
                         <?php endif; ?>

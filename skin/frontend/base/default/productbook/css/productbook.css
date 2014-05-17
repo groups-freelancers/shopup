@@ -1,0 +1,98 @@
+#dialog{
+	margin:3px;
+}
+/* Z-index of #mask must lower than #boxes .pb_window */
+#mask {
+	z-index:9000;
+	display:none;
+	background-color:rgba(0,0,0,.5);
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#boxes #dialog {
+	border:1px solid #D2B9D3;
+	background-color:#FFF;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: fixed;
+	display:none;
+	z-index:9999;
+	padding:5px;
+	top: 40px;
+	left: 300px;
+}
+div.pb_wrapper{
+	overflow:hidden; 
+	position:relative;
+}
+div.pb_caption {
+	background-color:rgba(0,0,0,.5);
+	position:relative;
+	text-align:center;
+	height: 35px;
+	width: 50%;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 35px;
+	margin: 0 auto;
+}
+div.pb_caption a {
+	color: #fff;
+	text-decoration: none;
+}
+.hd{
+	background-color:#fbfbfb; 
+	padding:10px 10px 10px 12px; 
+	color:#565656; 
+	font-size:14px; 
+	font-weight:bold;
+	border: 1px solid #f4f4f4
+}
+.pb_close{
+	text-decoration:none; 
+	color:#999; 
+	font-size:16px; 
+	vertical-align:middle;
+	float: right;
+}
+.product-img-box{
+	margin:20px 20px 0px 10px; 
+	width:220px;
+	border: 1px solid #999;
+	padding: 10px; 
+}
+.product-shop{
+	margin-top: 20px;
+}
+.product-shop .product-name a{
+	color: #333333;
+	font-size: 20px;
+}
+.product-shop .product-name a:hover{
+	text-decoration: none;
+	color: #974358;
+	font-size: 20px;
+}
+.in-stock{
+	clear: both;
+	color: #848484;
+	line-height: 30px;
+}
+.quick_add_cart{
+	display: block;
+}
+.quick-price-box{
+	font-size: 16px;
+	padding: 5px 0px;
+}
+/* td.share {padding-top: 2px; width: 100%;}
+td.share a{border:0; text-decoration:none; padding:3px; height:30px; width:30px;	float: left;} */
+/* a.sp-Google-plus-icon{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 0; width: 48px; height: 48px; }
+a.sp-delicious{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -38px; width: 48px; height: 48px; }
+a.sp-digg{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -79px; width: 48px; height: 48px; }
+a.sp-facebook{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -119px; width: 48px; height: 48px; }
+a.sp-reddit{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -159px; width: 48px; height: 48px; }
+a.sp-stumbleupon{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -198px; width: 48px; height: 48px; }
+a.sp-twitter{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -239px; width: 48px; height: 48px; }
+a.sp-yahoo{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -279px; width: 48px; height: 48px; } */

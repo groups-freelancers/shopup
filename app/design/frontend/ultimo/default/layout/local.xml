@@ -198,7 +198,7 @@
 		
 		<!-- Add blocks to the footer ====================================================================== -->
 		<reference name="footer">
-		
+			<block type="productbook/productbook" name="productbook.footer" template="productbook/pb_footer.phtml" />
 			<!-- Move newsletter to the footer -->
             <block type="newsletter/subscribe" name="newsletter" as="newsletter" template="newsletter/subscribe.phtml"/>
 			
