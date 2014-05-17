@@ -170,7 +170,7 @@ button.button span {
 	-o-transition:		color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 button.button:hover span { background-color:#333; color:#fff; }
-button.button span span { padding:0 25px; height:45px; line-height:45px; }
+button.button span span { padding:0 25px; height:35px; line-height:35px; }
 
 /* Smaller button - for inline display with input boxes
 -------------------------------------------------------------- */
@@ -1804,7 +1804,7 @@ h3.product-name {
 
 	/* Items of equal height - buttons and links displayed at the bottom of item
 	-------------------------------------------------------------- */
-	.products-grid.equal-height .item .actions { position:absolute; bottom:15px; }
+	.products-grid.equal-height .item .actions { position:absolute; bottom:25px; }
 	
 	/* Remove equal height */
 	.products-grid.auto-height .item .actions { position:static; bottom:auto; }
@@ -1991,12 +1991,12 @@ h3.product-name {
 }
 
 /* Effects */
-.item:hover .sticker { width:70px; height:70px; }
+/* .item:hover .sticker { width:70px; height:70px; } 
 .item:hover .sticker-wrapper.top-right,
 .item:hover .sticker-wrapper.top-left { top:-8px; }
 .item:hover .sticker-wrapper.top-right { right:-8px; }
 .item:hover .sticker-wrapper.top-left { left:-8px; }
-
+*/
 
 /* Rating
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3786,5 +3786,10 @@ a:hover .caption.light3 p { background-color:rgba(255,255,255, 1); color:#000; }
 }
 .clear-both{
       clear:both;
+}
+.cart-table .col-img .product-image img{
+	height: 75px;
+	width: 75px;
+	
 }
 /* shopup customization */	
