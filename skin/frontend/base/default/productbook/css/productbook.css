@@ -1,6 +1,3 @@
-#dialog{
-	margin:3px;
-}
 /* Z-index of #mask must lower than #boxes .pb_window */
 #mask {
 	z-index:9000;
@@ -9,18 +6,6 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-}
-#boxes #dialog {
-	border:1px solid #D2B9D3;
-	background-color:#FFF;
-	overflow-x: hidden;
-	overflow-y: auto;
-	position: fixed;
-	display:none;
-	z-index:9999;
-	padding:5px;
-	top: 40px;
-	left: 300px;
 }
 div.pb_wrapper{
 	overflow:hidden; 
@@ -50,16 +35,15 @@ div.pb_caption a {
 	border: 1px solid #f4f4f4
 }
 .pb_close{
-	text-decoration:none; 
-	color:#999; 
-	font-size:16px; 
-	vertical-align:middle;
 	float: right;
+	background-image: url('http://static.jabong.com/images/jlite/sprite/catalog_sprite.png');
+	height: 20px;
+	width: 20px;
+	background-position: 0 -27px;
 }
-.product-img-box{
+.quick-product-img-box{
 	margin:20px 20px 0px 10px; 
 	width:220px;
-	border: 1px solid #999;
 	padding: 10px; 
 }
 .product-shop{
@@ -86,13 +70,85 @@ div.pb_caption a {
 	font-size: 16px;
 	padding: 5px 0px;
 }
-/* td.share {padding-top: 2px; width: 100%;}
-td.share a{border:0; text-decoration:none; padding:3px; height:30px; width:30px;	float: left;} */
-/* a.sp-Google-plus-icon{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 0; width: 48px; height: 48px; }
-a.sp-delicious{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -38px; width: 48px; height: 48px; }
-a.sp-digg{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -79px; width: 48px; height: 48px; }
-a.sp-facebook{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -119px; width: 48px; height: 48px; }
-a.sp-reddit{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -159px; width: 48px; height: 48px; }
-a.sp-stumbleupon{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -198px; width: 48px; height: 48px; }
-a.sp-twitter{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -239px; width: 48px; height: 48px; }
-a.sp-yahoo{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -279px; width: 48px; height: 48px; } */
+.pb_window{
+	margin-left: -416px;
+	margin-top: -267px;
+	width: 800px !important;
+	height: auto !important;
+	border: 1px solid #676767;
+	box-shadow: 0 0 15px #676767;
+	padding: 16px 15px 16px;
+	left: 50%;
+	top: 50%;
+	background-color:#FFF;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: fixed;
+	display:none;
+	z-index:9999;
+}
+.popupBg{
+	background-image: url('http://static.jabong.com/images/jlite/filter-ie.png');
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 30;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.qview-info-box{
+	width: 355px;
+	border-radius: 2px;
+	background: #f5f5f5;
+	border: 1px solid #d2d2d2;
+	margin-bottom: 20px;
+	margin-top: 15px;
+	padding: 30px 30px 20px 30px;
+}
+.qview-info-box .price{
+	font: bold 36px/36px arial;
+	color: #222222 !important;
+}
+.quick_add_cart .quick-add{
+	background: #f75b16;
+	border: 1px solid #ec6723;
+	background: -moz-linear-gradient(top,#f77219 1%,#fec6a7 3%,#f77219 7%,#f75b16 100%);
+	background: -webkit-linear-gradient(top,#f77219 1%,#fec6a7 3%,#f77219 7%,#f75b16 100%);
+	background: -o-linear-gradient(top,#f77219 1%,#fec6a7 3%,#f77219 7%,#f75b16 100%);
+	background: -ms-linear-gradient(top,#f77219 1%,#fec6a7 3%,#f77219 7%,#f75b16 100%);
+	background: linear-gradient(to bottom,#f77219 1%,#fec6a7 3%,#f77219 7%,#f75b16 100%);
+	font-size: 18px;
+	width: 232px;
+	padding: 12px 0;
+	color: #fff;
+	float: none;
+	margin-top: 5px;
+}
+.quick_add_cart .quick-add:hover{
+	color: #fff;
+}
+.qview-info-box .in-stock{
+	font-size: 14px;
+	line-height: 50px;
+}
+.qview-info-box .show-more-detail{
+	color: #666;
+	font-size:13px;
+	cursor: pointer;
+	font-weight: bold;
+	text-decoration: underline;
+	display: block;
+	margin-top: 15px;
+}
+.qview-info-box .show-more-detail:hover{
+	color: #2271b2;
+}
+.qview-info-box .add-to-cart{
+	margin-top: 10px;
+}
+.qview-footer{
+	text-align: center;
+	padding-top: 15px;
+	border-top: 1px solid #dddddd;
+}

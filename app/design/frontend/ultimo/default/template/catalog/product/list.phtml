@@ -80,7 +80,7 @@
     <?php $_iterator = 0; ?>
     <ol class="products-list<?php if($listClasses) echo $listClasses; ?>" id="products-list">
     <?php foreach ($_productCollection as $_product): ?>
-        <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+        <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>" <?php if(!$_product->isSaleable()){ echo 'style="opacity:0.4"'; } ?> >
 
             <?php // Product Image ?>
             <a id="pb_item_<?php echo $_product->getId(); ?>" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image grid12-4 persistent-grid2-1" id="pb_item_<?php echo $_product->getId() ?>">
@@ -114,7 +114,7 @@
             <div class="right-column grid12-3 persistent-grid2-1">
             	<?php echo $this->getPriceHtml($_product, true) ?>
                 <?php if($_product->isSaleable()): ?>
-                    <p><button type="button" title="<?php echo $this->__('Add to Bag') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Bag') ?></span></span></button></p>
+                    <p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
                 <?php else: ?>
                     <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                 <?php endif; ?>
@@ -150,7 +150,7 @@
     
     <ul class="products-grid category-products-grid itemgrid itemgrid-<?php echo $gc['column_count']; ?>cols<?php if($gridClasses) echo $gridClasses; ?>">
     	<?php foreach ($_productCollection as $_product): ?>
-            <li class="item">
+            <li class="item" <?php if(!$_product->isSaleable()){ echo 'style="opacity:0.4"'; } ?> >
                 <a id="pb_item_<?php echo $_product->getId(); ?>" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); ?>" class="product-image">
                 
                 	<img src="<?php echo $theme->getImgUrl($this, $_product, $imgWidth, $imgHeight, 'small_image'); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); ?>" width="209" height="209" />
@@ -190,7 +190,7 @@
                 	<?php if ($gc['display_addtocart'] != 0): ?>
                     	<?php $btnClass = ($gc['display_addtocart'] == 1) ? ' display-onhover' : ''; ?>
 						<?php if ($_product->isSaleable()): ?>
-                            <button type="button" title="<?php echo $this->__('Add to Bag') ?>" class="button btn-cart<?php echo $btnClass; ?>" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Bag') ?></span></span></button>
+                            <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart<?php echo $btnClass; ?>" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                         <?php else: ?>
                             <p class="availability out-of-stock<?php echo $btnClass; ?>"><span><?php echo $this->__('Out of stock') ?></span></p>
                         <?php endif; ?>
@@ -251,6 +251,8 @@
 		echo "</style>";
 	}
 ?>
+<div class="popupBg">
+</div>
 <div id="boxes">
 	<!-- Do not remove div#mask, because you'll need it to fill the whole screen --> 
 	<!-- #customize your modal window here -->
