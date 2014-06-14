@@ -125,7 +125,9 @@ body.cms-index-defaultindex .the-slideshow {
 	font-size:1.5em; /*18px*/
 	line-height:1.2222em; /*22px*/
 }
-
+.block .block-title, .section-title{
+	border-bottom:2px solid #1877AF;
+}
 /* Account headings
 -------------------------------------------------------------- */
 

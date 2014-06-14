@@ -3,13 +3,10 @@
 	$model = Mage::getModel('catalog/product'); //getting product model
 	$_product = $model->load($productid); //getting product object for particular product id
 ?>
-<html>
-<body>
 <table cellpadding="0" cellspacing="0" width="100%">
 	<tr>
-		<td style="text-align:left;" class="hd" colspan="2">
-			Product Overview
-			<a href="#" class="pb_close ">X</a>
+		<td style="text-align:left;" class="" colspan="2">
+			<a href="#" class="pb_close "></a>
 		</td>
 	</tr>
 	<tr>
@@ -17,7 +14,7 @@
 			<table cellpadding="0" cellspacing="0" width="100%">
 				<tr>
 					<td>	
-						<div class="product-img-box">
+						<div class="quick-product-img-box">
 							<img title="<?php echo $_product->getName() ?>" alt="<?php echo $_product->getName() ?>" src="<?php echo $_product->getImageUrl() ?>"></p>
 						</div>
 					</td>
@@ -27,15 +24,16 @@
 								<a href="<?php echo $_product->getProductUrl() ?>"><?php echo $_product->getName() ?></a>
 							</div>
 
-							<div class="price-box quick-price-box">
-								<span class="regular-price">
-									<span class="price"><?php echo $this->getProductPrice($_product); ?></span>
-								</span>
-							</div>
-
-							<?php
-							if($_product->isSaleable())	{
-							?>
+							
+							<div class="qview-info-box">
+								<div class="price-box quick-price-box">
+									<span class="regular-price">
+										<span class="price"><?php echo $this->getProductPrice($_product); ?></span>
+									</span>
+								</div>
+								<?php
+									if($_product->isSaleable())	{
+								?>
 								<div class="add-to-cart">
 									<label for="qty">Qty:</label>
 									<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty_<?php echo $productid ?>" name="qty">
@@ -45,51 +43,32 @@
 										}else{
 											echo '<p class="in-stock"><span>'.$this->__('Availability: Temporarily out of stock.').'</span></p>';
 										}
-								?>
-									<button class="button btn-cart quick_add_cart" id="pb_cart_<?php echo $_product->getId() ?>" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+									?>
+									<button class="button btn-cart quick_add_cart" id="pb_cart_<?php echo $_product->getId() ?>" title="Buy Now" type="button"><span class="quick-add">BUY NOW</span></button>
 								</div>
-							<?php
-							}
-							?>
-						</div>
-						<div class="short-description" style="margin-top:15px;">
-							<h2 class="hd">Quick Overview</h2>
-							<div class="std"><?php echo $_product->getShortDescription() ?></div>
-						</div>
-<!-- 
-						<div style="margin-top:15px;">
-							<h2 class="hd">Current Cart Status</h2>
-							<div id="cartInfo">
-								Items in cart: <span class="pb_crt_cnt"><?php //echo $this->getCartTotalQty() ?></span><br />
-								Cart total: <span class="pb_crt_total"><?php //echo $this->getCartTotal() ?></span>
+								<?php
+									}
+								?>
+								<a href="<?php echo $_product->getProductUrl(); ?>" class="show-more-detail" title="See more details">Show More Details »</a>
 							</div>
 						</div>
-	 -->					
+						<!--  
+						<div class="short-description" style="margin-top:15px;">
+							<h2 class="hd">Quick Overview</h2>
+							<div class="std"><?php //echo $_product->getShortDescription() ?></div>
+						</div>
+						-->
 					</td>
 				</tr>
 			</table>
 		</td>
 	</tr>
-<!--  	<tr>
-		<td colspan="2" class="hd">
-			Share This Product
+	<tr>
+		<td colspan="2">
+			<div class="qview-footer">
+                    <span>Free Shipping</span>&nbsp;|&nbsp;<span>Cash On Delivery </span>&nbsp;|&nbsp;<span>Customer Support(24x7) <strong>0124-6128000</strong></span>
+    		</div>
 		</td>
 	</tr>
--->	
-<!-- <tr>
-		<td class="share" style="width:100%;">
-			<?php //$share_url = urlencode($_product->getProductUrl()) ?>
-			<a href="https://plus.google.com/share?url=<?php //echo $share_url ?>" target="_blank" title="Share on Google Plus" class="sp-Google-plus-icon" title="Share on Google Plus"></a>
-			<a href="http://www.facebook.com/sharer.php?u=<?php //echo $share_url ?>&title=<?php //echo urlencode($_product->getName()) ?>" target="_blank" title="Share on Facebook" class="sp-facebook"></a>
-			<a href="http://twitter.com/home?status=Currently buying <?php //echo $share_url ?>" target="_blank" class="sp-twitter" title="Share on Twitter"></a>
-			<a title="Add To Del.icio.us" target="_blank" href="http://del.icio.us/post?url=<?php //echo $share_url ?>&amp;title=<?php //echo urlencode($_product->getName()) ?>" class="sp-delicious" title="Add To Del.icio.us"></a>
-			<a title="Stumble This" target="_blank" href="http://www.stumbleupon.com/refer.php?url=<?php //echo $share_url ?>&amp;title=<?php //echo urlencode($_product->getName()) ?>" class="sp-stumbleupon" title="Stumble This">			</a>
-			<a title="Digg This" target="_blank" href="http://digg.com/submit?phase=2&amp;url=<?php //echo $share_url ?>&amp;title=<?php //echo urlencode($_product->getName()) ?>" class="sp-digg" title="Digg This"></a>
-			<a title="Add To Reddit" target="_blank" href="http://reddit.com/submit?url=<?php //echo $share_url ?>&amp;title=<?php //echo urlencode($_product->getName()) ?>" class="sp-reddit" title="Add To Reddit"></a>
-			<a title="Add To Yahoo" target="_blank" href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=<?php //echo $share_url ?>&amp;title=<?php //echo urlencode($_product->getName()) ?>" class="sp-yahoo" title="Add To Yahoo"></a>
-		</td>
-	</tr>
--->
+
 </table>
-</body>
-</html>

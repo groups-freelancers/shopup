@@ -41,6 +41,9 @@
 <div class="cart">
     <div class="page-title title-buttons">
         <h1><?php echo $this->__('Shopping Cart') ?></h1>
+        <div class="grid12-6 omega persistent-grid2-1 float-right">
+            	<?php echo $this->getChildHtml('coupon') ?>
+            </div>
         <?php /* if(!$this->hasError()): ?>
         <ul class="checkout-types">
         <?php foreach ($this->getMethods('top_methods') as $method): ?>
@@ -177,10 +180,10 @@
             <?php endif; ?>
             
 			<div class="grid12-6 alpha persistent-grid2-1">
-            	<?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
+            	<?php //if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
 			</div>
 			<div class="grid12-6 omega persistent-grid2-1 float-right">
-            	<?php echo $this->getChildHtml('coupon') ?>
+            	<?php //echo $this->getChildHtml('coupon') ?>
             </div>
             <div class="grid-full alpha omega">
                 <?php echo $this->getChildHtml('crosssell') ?>

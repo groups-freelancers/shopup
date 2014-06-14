@@ -30,7 +30,7 @@ class Infortis_Ultimo_Helper_Labels extends Mage_Core_Helper_Abstract
 		
 		if ($isSale == true)
 		{
-			$html = '<div class="sticker-wrapper top-right"><div class="sticker sale">' . $this->__('Sale') . '</div></div>';
+			$html = '<div class="sticker-wrapper top-right"><div class="sticker sale">' . $this->__('Offer') . '</div></div>';
 		}
 		
 		return $html;
