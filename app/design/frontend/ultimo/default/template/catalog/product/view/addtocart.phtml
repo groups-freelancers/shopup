@@ -31,13 +31,32 @@
 ?>
 <?php $_product = $this->getProduct(); ?>
 <?php $buttonTitle = $this->__('Add to Cart'); ?>
-<?php if($_product->isSaleable()): ?>
+<?php if($_product->isSaleable()): 
+if($_product->getTypeID()=='simple')
+{
+	$count=(int)$_product->getStockItem()->getQty();
+	$count=$count>5 ? 5 : $count;
+}else 
+	$count=5;
+?>
     <div class="add-to-cart">
         <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
         <?php if(!$_product->isGrouped()): ?>
             <div class="qty-wrapper">
             	<label for="qty"><?php echo $this->__('Qty:') ?></label>
-            	<input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+            <select name="qty" class="input-text qty" id="qty">
+				<?php
+						for($i=1;$i<=$count;$i++){
+					?>
+						<option value="<?php echo $i;?>"<?php echo ($this->getProductDefaultQty() * 1)==$i ? "selected='selected'":""; ?>><?php echo $i; ?></option>
+					<?php	
+						}
+					
+				?>
+				</select>
+            
+            
+<?php /*            	<input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />*/?>
             </div>
         <?php endif; ?>
         <?php echo $this->getChildHtml('', true, true) ?>

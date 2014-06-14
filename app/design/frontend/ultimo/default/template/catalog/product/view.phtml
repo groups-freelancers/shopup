@@ -73,6 +73,21 @@
             </div>
             
             <?php echo $this->getReviewsSummaryHtml($_product, false, true); //reviews ?>
+            <?php 
+            //Custom 1 :somesh
+            $custom= $_product->getData('custome1');
+            if(!empty($custom)){
+				?>
+                    <li><label>Custom:</label> <strong><?php echo $custom; ?></strong></li>
+                <?php } ?>
+            
+            <?php 
+            //Custom2 :Somesh
+            $custom= $_product->getData('custom2');
+            if(!empty($custom)){
+				?>
+                    <li><label>Custom:</label> <strong><?php echo $custom; ?></strong></li>
+                <?php } ?>
             
             <?php if ($_product->getShortDescription()): ?>
                 <div class="short-description">
