@@ -32,7 +32,7 @@
 		</reference>
 	</customer_logged_out>
 	<checkout_onepage_index>
-        <reference name="content">
+        <reference name="checkout.onepage.login">
             <block type="gomage_social/login" name="gomage.social.login.checkout" before="-">
                 <action method="setPlace"><place>checkout</place></action>
             </block>
