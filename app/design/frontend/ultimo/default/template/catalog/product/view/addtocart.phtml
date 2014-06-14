@@ -43,6 +43,7 @@ if($_product->getTypeID()=='simple')
         <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
         <?php if(!$_product->isGrouped()): ?>
             <div class="qty-wrapper">
+            <?php if($count>1){?>
             	<label for="qty"><?php echo $this->__('Qty:') ?></label>
             <select name="qty" class="input-text qty" id="qty">
 				<?php
@@ -54,7 +55,7 @@ if($_product->getTypeID()=='simple')
 					
 				?>
 				</select>
-            
+            <?php } ?>
             
 <?php /*            	<input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />*/?>
             </div>
