@@ -52,17 +52,27 @@ html .glc-rtl.glc-login-and-paypal .gs-login-checkout{
  
 /* Login Page
 -------------------------------------------------- */
-.gs-login-login,
-.gs-login-checkout{
+.gs-login-login{
   text-align: right;
   padding: 5px 0;
   }
+ 
+.gs-login-checkout{
+  text-align: center;
+  padding: 5px 0px 15px 0px;
+  background-color: #f9f9f9;
+  border: 1px solid #F2F2F2;
+  border-radius:4px;
+  margin-top: 15px;
+  }
+  
   .gs-login-login li{
     padding: 0 2px;
     }
   .gs-login li{
-    display: inline-block;
+    display: block;
     vertical-align: middle;
+    margin-top: 10px;
     }
   .gs-login img{
     vertical-align: middle;
