@@ -1,6 +1,8 @@
 <?php if ($this->getPBConfigByName('pb_enabled')): ?>
 <script type="text/javascript">
-jQuery(document).ready(function() {
+
+function addQuickView()
+{
 	var pbBaseUrl = '<?php echo $this->getUrl('productbook/index') ?>';
 	var pbClass = '<?php echo $this->getPBConfigByName('pb_class') ?>';
 	var pb_caption = '<?php echo $this->getPBConfigByName('pb_caption') ?>';
@@ -28,7 +30,7 @@ jQuery(document).ready(function() {
 		}		
 	);
 
-    jQuery(document).on("click", ".pb_wrapper", function(e) {
+    jQuery(document).on("click", ".pb_caption", function(e) {
         e.preventDefault();
         var ID = jQuery(this).closest(".product-image").attr('id').split("pb_item_");
 		if (!ID[1] || ID[1] == "" || ID[1] == "undefined") {
@@ -91,27 +93,29 @@ jQuery(document).ready(function() {
 		closePB();
     });    
 
-    //if mask is clicked
-    /*
-    jQuery(document).on("click", '#mask', function(e) {
-		e.preventDefault();
+}
+/* Hide Pop up on click of esc key */
+jQuery(document).keyup(function(e) {
+	if (e.keyCode == 27) {
 		closePB();
-    });
-*/
-	jQuery(document).keyup(function(e) {
-		if (e.keyCode == 27) {
-			closePB();
-		}
-	});
-
-	function closePB() {
-		jQuery('#product_data').empty();
-		jQuery('.popupBg').hide();
-        jQuery('.pb_window').hide();
-        //to hide cart when any product is added
-        jQuery('#ps-overlay').hide();
-        jQuery('#pshtml-content').html('');
 	}
+});
+/* function to close pop up*/
+function closePB() {
+	jQuery('#product_data').empty();
+	jQuery('.popupBg').hide();
+    jQuery('.pb_window').hide();
+    //to hide cart when any product is added
+    jQuery('#ps-overlay').hide();
+    jQuery('#pshtml-content').html('');
+}
+
+jQuery(document).ready(function() {
+	addQuickView();
+});
+/* to add quick view for infinite scroll products */
+jQuery(window).scroll(function () {
+	addQuickView();
 });
 </script>
 <?php endif; ?>
