@@ -69,32 +69,53 @@
         <div class="product-shop grid12-<?php echo $primaryColUnits; ?>">
 
             <div class="product-name">
+            <?php if ($tmpHtml = trim($this->getChildHtml('product_secondary_top_placeholder'))): ?>
+						<div class="pro-logo"><?php echo $tmpHtml; ?></div>
+                    <?php endif; ?>
                 <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
             </div>
             
             <?php echo $this->getReviewsSummaryHtml($_product, false, true); //reviews ?>
-            <?php 
-            //Custom 1 :somesh
-            $custom= $_product->getData('custome1');
-            if(!empty($custom)){
-				?>
-                    <li><label>Custom:</label> <strong><?php echo $custom; ?></strong></li>
-                <?php } ?>
-            
-            <?php 
-            //Custom2 :Somesh
-            $custom= $_product->getData('custom2');
-            if(!empty($custom)){
-				?>
-                    <li><label>Custom:</label> <strong><?php echo $custom; ?></strong></li>
-                <?php } ?>
-            
-            <?php if ($_product->getShortDescription()): ?>
-                <div class="short-description">
-                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                </div>
-            <?php endif;?>
-            
+            <div class="pro-info -block clearfix">
+            	<ul class="pro_custom_attrib float-left">
+	            <?php 
+	            //Custom 1 :somesh
+	            $custom= $_product->getData('custom_attribute1');
+	            if(!empty($custom)){
+					?>
+	                    <li><?php echo $custom; ?></li>
+	                <?php } ?>
+	            
+	            <?php 
+	            //Custom2 :Somesh
+	            $custom= $_product->getData('custom_attribute2');
+	            if(!empty($custom)){
+					?>
+	                    <li><?php echo $custom; ?></li>
+	                <?php } ?>
+	            
+	            <?php 
+	            //Custom3 :Somesh
+	            $custom= $_product->getData('custom_attribute3');
+	            if(!empty($custom)){
+					?>
+	                    <li><?php echo $custom; ?></li>
+	                <?php } ?>
+	                
+	            <?php 
+	            //Custom4 :Somesh
+	            $custom= $_product->getData('custom_attribute3');
+	            if(!empty($custom)){
+					?>
+	                    <li><?php echo $custom; ?></li>
+	                <?php } ?>
+	            </ul>
+	            <div class="cert-logo-cont float-left">
+	            	<div class="cert-logo">
+	            	</div>
+	            </div>
+            </div>
+                
             <?php if ($extrahint_html = $this->getChildHtml('extrahint')): //qty increments ?>
                 <div class="extrahint-wrapper"><?php echo $extrahint_html; ?></div>
             <?php endif; ?>
@@ -137,25 +158,28 @@
 
         </div> <!-- end: product-shop -->
         
-        <?php if (!empty($secondaryColUnits)): ?>
+        <!-- Remove brands info from right block of product page -->
+        
+        <?php //if (!empty($secondaryColUnits)): ?>
             <div class="product-secondary-column grid12-<?php echo $secondaryColUnits; ?>">
             	<div class="inner">
 
 					<?php //Placeholder for extensions ?>
-					<?php if ($tmpHtml = trim($this->getChildHtml('product_secondary_top_placeholder'))): ?>
-						<div class="feature-wrapper bottom-border"><?php echo $tmpHtml; ?></div>
-                    <?php endif; ?>
+					<?php //if ($tmpHtml = trim($this->getChildHtml('product_secondary_top_placeholder'))): ?>
+						<div class="feature-wrapper"><?php echo $tmpHtml; ?></div>
+                    <?php //endif; ?>
                     
-                    <?php if ($tmpHtml = $this->getChildHtml('block_product_secondary_bottom')): ?>
-                        <div class="block_product_secondary_bottom"><?php echo $tmpHtml; ?></div>
-                    <?php endif; ?>
+                    <?php //if ($tmpHtml = $this->getChildHtml('block_product_secondary_bottom')): ?>
+                        <div class="block_product_secondary_bottom"><?php //echo $tmpHtml; ?></div>
+                    <?php //endif; ?>
                     
                     <?php //echo $this->getChildHtml('additional'); ?>
 
 				</div>
             </div> <!-- end: product-secondary-column -->
-        <?php endif; ?>
-
+        <?php //endif; ?>
+		<!-- Remove brands info from right block of product page -->
+		
         <?php if ($_product->isSaleable() && $this->hasOptions()): ?>
 			<?php if ($container2_html = $this->getChildChildHtml('container2', '', true, true)): ?>
         		<div class="box-additional grid-full">

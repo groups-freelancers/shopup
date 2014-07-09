@@ -2014,7 +2014,7 @@ h3.product-name {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .ratings,
-.no-rating { line-height:1.0833em; margin:15px 0 15px; }
+.no-rating { line-height:1.0833em; margin:10px 0 15px; }
 .ratings strong { float:left; margin:1px 5px 0 0; }
 .ratings .rating-links .separator {
 	display:inline-block;
@@ -2269,7 +2269,7 @@ a.email2friend:hover { background-position: -54px -27px; }
 .product-view .product-img-box { float:left; }
 .col3-layout .product-view .product-img-box { float:none; margin:0 auto; }
 .product-view .product-img-box .product-image {
-	border:1px solid #eee;
+	/* border:1px solid #eee; */
 	padding:5px;
 	position:relative; /* Labels (e.g. "new", "sale") are positioned relative to this box */
 }
@@ -2297,9 +2297,23 @@ a.email2friend:hover { background-position: -54px -27px; }
 /* Product main column
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
-.product-view .product-shop { float:left; }
-.product-view .product-shop .product-name {	margin:0 0 1.6666em; /*20px*/ }
-.product-view .product-shop .product-name h1 { margin:0; }
+.product-view .product-shop { 
+	float:left;
+	padding-left: 30px;
+	padding-right:20px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box; /* Firefox, other Gecko */
+	box-sizing: border-box; /* Opera/IE 8+ */
+}
+.product-view .product-shop .product-name {	margin:0 0 10px; }
+.product-view .product-shop .product-name h1 { 
+	margin:0; 
+	font-size: 24px; 
+	color: #666666; 
+	display: inline-block; 
+	vertical-align: top;
+	padding-left: 10px; 
+}
 .product-view .product-shop .ratings-table { margin:15px 0 5px; }
 .product-view .short-description { margin:15px 0; line-height:1.25em; /*15px*/ }
 .product-view .short-description ul { margin-top:5px; margin-bottom:5px; }
@@ -4015,5 +4029,37 @@ input#billing:street2{
 }
 .coupon-container{
 	margin-left: 160px;
+}
+.pro_custom_attrib{
+	padding-left: 30px;
+	list-style: initial;
+	color: #777;
+}
+.pro-logo{
+	display: inline-block;
+}
+.pro-logo .box-brand img{
+	width: 100px;
+	width: 100px;
+	border: 1px solid #ddd;
+	padding: 5px;
+}
+.clearfix{
+    clear: both;
+}
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.cert-logo{
+	background-image: url("../images/wb_cert.png");
+	height: 84px;
+	width: 75px;
+}
+.cert-logo-cont{
+	margin-left: 80px;
 }
 /* shopup customization */
