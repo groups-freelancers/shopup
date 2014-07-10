@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Aurigait_CustomCheckout>
+      <version>0.1.0</version>
+    </Aurigait_CustomCheckout>
+  </modules>
+  <global>
+    <helpers>
+      <customcheckout>
+        <class>Aurigait_CustomCheckout_Helper</class>
+      </customcheckout>
+    </helpers>
+	<blocks>
+	  <customcheckout>
+		<class>Aurigait_CustomCheckout_Block</class>
+	  </customcheckout>
+			<checkout>
+				<rewrite>
+					<onepage>Aurigait_CustomCheckout_Block_Checkout_Onepage</onepage>
+                                        <onepage_login>Aurigait_CustomCheckout_Block_Checkout_Onepage_Login</onepage_login>
+                               </rewrite>
+                               <rewrite>         
+                                        <onepage_payment>Aurigait_CustomCheckout_Block_Checkout_Onepage_Payment</onepage_payment>
+                                 </rewrite>
+                               <rewrite>       
+                                        
+				</rewrite>
+			</checkout>
+	</blocks>
+        <models>
+	  <customcheckout>
+		<class>Aurigait_CustomCheckout_Model</class>
+		<resourceModel>customcheckout_mysql4</resourceModel>
+	  </customcheckout>
+			<checkout>
+				<rewrite>
+					<type_onepage>Aurigait_CustomCheckout_Model_Checkout_Type_Onepage</type_onepage>
+				</rewrite>
+			</checkout>
+	</models>
+  </global>
+  <rewrite>        
+            <aurigait_customcheckout_checkout_onepagecontroller>
+                <from><![CDATA[#^/checkout/onepage/#]]></from> <!-- Mage_Checkout_OnepageController  -->
+                <to>/customcheckout/checkout_onepage/</to> <!-- Aurigait_CustomCheckout_Checkout_OnepageController  -->
+            </aurigait_customcheckout_checkout_onepagecontroller>
+		</rewrite>
+  <frontend>
+      <routers>
+            <customcheckout>
+                <use>standard</use>
+                <args>
+                    <module>Aurigait_CustomCheckout</module>
+                    <frontName>customcheckout</frontName>
+                </args>
+            </customcheckout>
+        </routers>
+        <layout>
+            <updates>
+                <questionanswer>
+                    <file>customcheckout.xml</file>
+                </questionanswer>
+            </updates>
+        </layout>
+  </frontend>
+</config> 

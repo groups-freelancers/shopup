@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+
+
+<checkout_onepage_index>
+    <!--added by ankur */-->
+                
+                <remove name="checkout.onepage.billing"/>
+                <remove name="checkout.onepage.shipping"/>
+                
+                <reference name="checkout.onepage">
+                     <action method='setTemplate'><template>customcheckout/checkout/onepage.phtml</template></action>
+
+                    <block type="customcheckout/checkout_single" name="single" template="customcheckout/onepage/single.phtml"/>
+                </reference>
+     <!-- end-->
+</checkout_onepage_index>
+</layout>

@@ -3877,7 +3877,7 @@ a:hover .caption.light3 p { background-color:rgba(255,255,255, 1); color:#000; }
 .opc { 
 	position:relative; 
 	overflow:hidden; 
-	height:770px; 
+	height:1300px; /*770px*/ 
 	padding-top:10px; 
 	text-align:center; 
 	border:1px #e2e2e2 solid; 
