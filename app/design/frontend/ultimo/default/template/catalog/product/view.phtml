@@ -157,28 +157,77 @@
             <?php endif; ?>
 
         </div> <!-- end: product-shop -->
+
         
-        <!-- Remove brands info from right block of product page -->
-        
+        <!-- Shop up customization Remove brands info from right block of product page -->
         <?php //if (!empty($secondaryColUnits)): ?>
-            <div class="product-secondary-column grid12-<?php echo $secondaryColUnits; ?>">
-            	<div class="inner">
+            <!-- <div class="product-secondary-column grid12-<?php //echo $secondaryColUnits; ?>">
+            	<div class="inner"> -->
 
 					<?php //Placeholder for extensions ?>
 					<?php //if ($tmpHtml = trim($this->getChildHtml('product_secondary_top_placeholder'))): ?>
-						<div class="feature-wrapper"><?php echo $tmpHtml; ?></div>
+						<!--  <div class="feature-wrapper"><?php //echo $tmpHtml; ?></div> -->
                     <?php //endif; ?>
                     
                     <?php //if ($tmpHtml = $this->getChildHtml('block_product_secondary_bottom')): ?>
-                        <div class="block_product_secondary_bottom"><?php //echo $tmpHtml; ?></div>
+                        <!-- <div class="block_product_secondary_bottom"><?php //echo $tmpHtml; ?></div> -->
                     <?php //endif; ?>
                     
                     <?php //echo $this->getChildHtml('additional'); ?>
 
+			<!-- </div>
+            </div> --> <!-- end: product-secondary-column -->
+        <?php //endif; ?>
+		<!-- shop up customization Remove brands info from right block of product page -->
+
+        
+            <div class="product-secondary-column grid12-<?php echo $secondaryColUnits; ?>">
+            	<div class="inner">
+						<div class="prd-delivery-details pos-rel mt82">
+					        <table class="deliver-detail-tbl" cellspacing="0" cellpadding="0">
+					            <tbody>
+					            	<tr>
+					               		<td><span class="prd-ship-icon product-sprite float-left"></span></td>
+					               		<td class="txt-up fs10">
+					                   		<span>	
+					                			Shipped in <br>2 business days                   
+					                		</span>
+					                    </td>
+					           		</tr>
+					           		<tr>
+						               <td><span class="watch-icon product-sprite float-left ml8"></span></td>
+						               <td class="txt-up fs10">Check delivery time &amp; COD availability</td>
+					           		</tr>
+						           <!--option 1 start --->
+						           <tr>
+						               <td colspan="2">
+						                   <form action="" >
+						                       <input type="text" id="postcode" class="fs10 f-italic float-left p3 placeholder" maxlength="6" placeholder="Enter your pincode">
+						                       <input type="submit" value="Check" class="float-left fs12 c666 cursor" id="tat-calculator-submit">
+						                   </form>
+						               </td>
+						           </tr>
+					               <tr class="d-border">
+						                <td class="f-bold fs18 pl9">30</td>
+						                <td class="txt-up fs10">DAYS FREE RETURN/EXCHANGE</td>
+						           </tr>
+					               <tr class="d-border">
+						                <td><span class="float-left gift-wrp-icon product-sprite ml9"></span></td>
+						                <td class="txt-up fs10">GIFT WRAP AVAILABLE</td>
+						           </tr>
+					               <tr class="d-border">
+					               		<td class="f-bold fs15 pl3">Free</td>
+					                	<td class="txt-up fs10">HOME DELIVERY</td>
+					           	   </tr>
+						           <tr class="d-border">
+						               <td class="f-bold fs15">100%</td>
+						               <td class="txt-up fs10">authentic brands<br>and products</td>
+						           </tr>
+							    </tbody>
+						    </table>
+						</div>
 				</div>
             </div> <!-- end: product-secondary-column -->
-        <?php //endif; ?>
-		<!-- Remove brands info from right block of product page -->
 		
         <?php if ($_product->isSaleable() && $this->hasOptions()): ?>
 			<?php if ($container2_html = $this->getChildChildHtml('container2', '', true, true)): ?>

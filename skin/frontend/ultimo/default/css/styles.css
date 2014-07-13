@@ -4062,4 +4062,104 @@ input#billing:street2{
 .cert-logo-cont{
 	margin-left: 80px;
 }
-/* shopup customization */
+
+/* Product Page */
+.product-secondary-column .inner{
+	padding-top: 0px;
+}
+.prd-delivery-details {
+	width: 189px;
+	padding: 0 15px;
+	line-height: 100%;
+	margin-left: -1px;
+	border-radius: 2px;
+	border: 1px solid #e1e1e1;
+}
+.prd-delivery-details td {
+	color: #666;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	height: 22px;
+	width: 70%;
+	vertical-align: middle;
+}
+.prd-delivery-details tr.d-border td {
+	border-top: 1px dotted #ccc;
+}
+.prd-delivery-details tr td:first-child {
+	width: 33px;
+}
+.prd-delivery-details input[type='text'] {
+	width: 125px;
+	height: 18px;
+	line-height: 18px;
+	border: 1px solid #ccc;
+	border-right: 0;
+	outline: 0;
+	border-radius: 2px 0 0 2px;
+	-webkit-box-shadow: 0 3px 3px #e8e8e8 inset;
+	-moz-box-shadow: 0 3px 3px #e8e8e8 inset;
+	box-shadow: 0 3px 3px #e8e8e8 inset;
+}
+.prd-delivery-details input[type='submit'] {
+	width: 54px;
+	height: 26px;
+	margin-left: -2px;
+	border: 1px solid #bbbbb7;
+	background-color: #ebebeb;
+	border-radius: 0 2px 2px 0;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#ebebeb));
+	background-image: -webkit-linear-gradient(top,#fff,#ebebeb);
+	background-image: -moz-linear-gradient(top,#fff,#ebebeb);
+	background-image: -ms-linear-gradient(top,#fff,#ebebeb);
+	background-image: -o-linear-gradient(top,#fff,#ebebeb);
+}
+.prd-delivery-details .watch-icon {
+	width: 21px;
+	height: 22px;
+	background-position: -45px -111px;
+}
+.prd-delivery-details .prd-ship-icon {
+	width: 28px;
+	height: 21px;
+	background-position: -33px -89px;
+}
+.prd-delivery-details .gift-wrp-icon {
+	width: 22px;
+	height: 24px;
+	background-position: -85px -88px;
+}
+.product-sprite {
+	background-image: url('../images/img/product_sprite.png');
+	background-repeat: no-repeat;
+}
+.ml6 {
+	margin-left: 6px;
+}
+.fs10 {
+	font-size: 10px;
+}
+.txt-up {
+	text-transform: uppercase;
+}
+.p3 {
+	padding: 3px;
+}
+.p5 {
+	padding: 5px;
+}
+.f-italic {
+	font-style: italic;
+}
+.fs12 {
+	font-size: 12px;
+}
+.fs18 {
+	font-size: 18px;
+}
+.f-bold{
+	font-weight: bold;
+}
+/* Product Page*/
+
+/************************* shopup customization *****************************/
